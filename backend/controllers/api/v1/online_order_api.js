@@ -20,7 +20,7 @@ module.exports.register = async function (req, res) {
       });
       user = user.toObject(); // convert document to Javscript object
       return res.json(201, {
-        message: `Success! ${user.name}, you are successfully registered on Voosh.`,
+        message: `Success! ${user.name}, you are successfully registered.`,
         data: {
           user: user,
         },
@@ -107,6 +107,7 @@ module.exports.addOrder = async function (req, res) {
 
 module.exports.getOrder = async function (req, res) {
   try {
+    console.log(req.body);
     if(req.params.id != req.user.id) {
         return res.json(401, {
           message: "Not authorized to fetch someone else's details",

@@ -6,6 +6,10 @@ const { default: mongoose } = require("mongoose");
 const bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
+const cors = require("cors");
+app.use(bodyParser.json());
+
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 // DB Connection
 mongoose.connect(

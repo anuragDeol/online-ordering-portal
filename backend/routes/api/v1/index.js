@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require("../../../config/passport-jwt-strategy");
 
-const usersController = require("../../../controllers/api/v1/users_api");
+const usersController = require("../../../controllers/api/v1/online_order_api");
 
 router.post("/add-user", usersController.register); // user registration - add a new user
 router.post("/login-user", usersController.login); // user login
